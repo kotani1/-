@@ -3,6 +3,7 @@ session_start();
 $err = $_SESSION;
 $_SESSION  = array();
 session_destroy();
+
 $token_byte = openssl_random_pseudo_bytes(16);
 $csrf_token = bin2hex($token_byte);
 $_SESSION['token'] = $csrf_token;

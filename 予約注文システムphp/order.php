@@ -19,6 +19,7 @@ if (!empty($orders)) {
   }
 }
 
+//トークン照合
 if (isset($_SESSION["csrf_token"])) {
   if ($_POST["csrf_token"] === $_SESSION['csrf_token']) {
     $orders[] = [
@@ -30,6 +31,8 @@ if (isset($_SESSION["csrf_token"])) {
   }
 }
 unset($_SESSION["csrf_token"]);
+
+//トークン生成
 $toke_byte = openssl_random_pseudo_bytes(16);
 $csrf_token = bin2hex($toke_byte);
 $_SESSION['csrf_token'] = $csrf_token;

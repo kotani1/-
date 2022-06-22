@@ -2,12 +2,15 @@
 require 'template.php';
 require 'function.php';
 $orders = $_SESSION;
+
 //トークン作成
+
 $toke_byte = openssl_random_pseudo_bytes(16);
 $csrf_token = bin2hex($toke_byte);
 $_SESSION = $orders;
 $_SESSION['csrf_token'] = $csrf_token;
 unset($_SESSION['err']);
+
 $id = $_GET['id'];
 $pdo = pdoConnect();
 $sql = "SELECT * FROM menus WHERE id = :id";
