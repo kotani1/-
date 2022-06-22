@@ -1,0 +1,32 @@
+.right{
+  float: right;
+}
+.center{
+  text-align: center;
+}
+.senn{
+  border-bottom: solid black;
+}
+ul {
+  display: flex;
+}
+li{
+  list-style: none;
+  margin-left: 350px;
+}
+table{
+  margin-top: 100px;
+  width: 100%;
+}
+td{
+    width: 30%;
+    height: auto;
+}
+img {
+  max-width: 100%;
+    height: auto;
+}
+.hover10:hover {
+  cursor: pointer;
+  transform: scale(1.1, 1.1);
+}
